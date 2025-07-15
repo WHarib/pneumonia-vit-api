@@ -3,8 +3,7 @@ title: Pneumonia ViT Classifier API
 emoji: 🩺
 colorFrom: blue
 colorTo: green
-sdk: static
-sdk_version: "1.0.0"
+sdk: docker
 app_file: app.py
 pinned: false
 ---
