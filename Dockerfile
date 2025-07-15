@@ -15,6 +15,9 @@ COPY . .
 
 # Expose default HF port
 EXPOSE 7860
+# ---------- allow HF to write cache ----------
+ENV TRANSFORMERS_CACHE=/code/hf_cache
+RUN mkdir -p /code/hf_cache
 
 # Launch FastAPI with uvicorn
 CMD ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "7860"]
