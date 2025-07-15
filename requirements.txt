@@ -5,3 +5,5 @@ numpy<2
 pydantic==2.10.6
 fastapi==0.110.1
 uvicorn==0.29.0
+python-multipart==0.0.9
+
