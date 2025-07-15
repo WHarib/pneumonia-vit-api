@@ -14,9 +14,14 @@ CLASS_NAMES = ["Normal", "Pneumonia"]
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 try:
-    # 🔄 Load model and config directly from current directory
+    #  Load model and config directly from current directory
     model = ViTForImageClassification.from_pretrained(".", local_files_only=True).to(device).eval()
-    processor = ViTImageProcessor.from_pretrained("google/vit-base-patch16-224-in21k")
+  
+processor = ViTImageProcessor.from_pretrained(
+    "google/vit-base-patch16-224-in21k",
+    cache_dir="/tmp"        # <— writable for any user
+)
+
 except Exception as e:
     raise RuntimeError(f"Model or processor loading failed: {e}")
 
